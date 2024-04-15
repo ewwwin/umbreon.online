@@ -70,7 +70,7 @@ ul {
 
 footer {
 	text-align: center;
-	margin-block: 4rem;
+	margin-block: 6rem;
 	position: relative;
 }
 hr,
@@ -82,7 +82,7 @@ footer::before {
 hr {
 	border: none;
 	color: inherit;
-	margin: calc(2rem - 0.5px) auto;
+	margin: calc(3rem - 0.5px) auto;
 }
 footer::before {
 	content: "";
@@ -90,5 +90,5 @@ footer::before {
 	position: absolute;
 	left: 50%;
 	transform: translateX(-50%);
-	top: calc(-2rem - 0.5px);
+	top: calc(-3rem - 0.5px);
 }

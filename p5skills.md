@@ -1,7 +1,7 @@
 ---
 title: Conjugating Persona 5 Skill Names
-themable: no
 content-updated: 2024-02-14
+themable: no
 style: |
     :root {
         --body-background:
@@ -9,7 +9,7 @@ style: |
             linear-gradient(270deg, #2E000288, transparent 60%),
             linear-gradient(140deg, #2E000266, transparent 60%),
             black;
-        --text-color: white !important;
+        --text-color: white;
     }
     body {
         max-width: 62em;
