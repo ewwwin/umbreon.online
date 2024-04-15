@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>{{page.title}}</title>
+
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="/style.css">
+
+		{%- if page.themable -%}
+		<!-- included before content to avoid flashing -->
+		<script src="/theme.js"></script>
+		<!-- only include styles for theme buttons if JS is allowed -->
+		<script>document.write('<link rel="stylesheet" type="text/css" href="/theme.css">')</script>
+		{%- endif -%}
+
+		{%- if page.style -%}
+		<style title="page-specific inline style">{{page.style}}</style>
+		{%- endif -%}
+	</head>
+	<body>
+		<main>{{content}}</main>
+		<footer>
+			<p>
+				{%- if page.content-updated -%}
+				Page content updated <time datetime="{{page.content-updated | date_to_xmlschema}}">{{page.content-updated | date_to_string}}</time>.
+				{%- endif %}
+				Site updated <time datetime="{{site.time | date_to_xmlschema}}">{{site.time | date_to_string}}</time>.
+			</p>
+			<nav>
+				<p><a href="/">home</a>
+			</nav>
+			<p><a href="https://webring.umbreon.online/prev?from=https://umbreon.online">⇠</a> <a href="https://webring.umbreon.online">i run a webring btw</a> <a href="https://webring.umbreon.online/next?from=https://umbreon.online">⇢</a></p>
+		</footer>
+
+		{%- if page.themable -%}
+		<!-- Only add the theme button to the page if JS is allowed -->
+		<script>
+			document.write(`
+				<button
+					class="theme-button theme-toggle-button"
+					aria-label="Toggle theme"
+					title="Toggle theme"
+					onclick="toggleTheme()"
+				>Toggle</button>
+				<button
+					class="theme-button theme-reset-button"
+					aria-label="Reset to browser/system theme"
+					title="Reset to browser/system theme"
+					onclick="resetTheme()"
+				>Reset</button>
+			`);
+		</script>
+		{%- endif -%}
+	</body>
+</html>

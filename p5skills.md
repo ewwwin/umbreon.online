@@ -1,0 +1,420 @@
+---
+title: Conjugating Persona 5 Skill Names
+themable: no
+content-updated: 2024-02-14
+style: |
+    :root {
+        --body-background:
+            linear-gradient(20deg, #2E000244, transparent 78%),
+            linear-gradient(270deg, #2E000288, transparent 60%),
+            linear-gradient(140deg, #2E000266, transparent 60%),
+            black;
+        --text-color: white !important;
+    }
+    body {
+        max-width: 62em;
+    }
+    table {
+        margin: 0 auto;
+        border-collapse: collapse;
+        line-height: 1.125;
+        text-underline-offset: 0.25em;
+        background: black;
+    }
+    caption {
+        font-style: italic;
+        margin: 0.5em;
+    }
+    caption cite {
+        font-style: normal;
+    }
+
+    th, td {
+        border: 1px solid black;
+        padding: 0.25em 0.5em;
+        text-align: center;
+    }
+    th {
+        font-weight: inherit;
+        background: #2E0002;
+    }
+    /* fill in empty cells for clarity */
+    td:empty::after {
+        content: "-";
+        opacity: 0.5;
+    }
+    /* large dividers */
+    thead,
+    #magic tbody:nth-of-type(6),
+    #magic tbody:nth-of-type(8),
+    #magic tbody:nth-of-type(9),
+    #stats tbody:nth-of-type(2) {
+        border-bottom: 5px solid #000;
+    }
+    abbr {text-decoration-thickness: 1px}
+
+    /* attribute styles */
+    .medium, .highfatal {font-style: italic}
+    .heavy {font-weight: bold}
+    .severe {
+        font-weight: bold;
+        font-style: italic;
+    }
+
+    .all {text-decoration: underline;}
+
+    .fire     {--affinity-color: #FF351E}
+    .ice      {--affinity-color: #00AEFF}
+    .elec     {--affinity-color: #FDFF37}
+    .wind     {--affinity-color: #89F72E}
+    .psy      {--affinity-color: #FF5FFF}
+    .nuke     {--affinity-color: #00FCFF}
+    .bless    {--affinity-color: #FFFFA2}
+    .curse    {--affinity-color: #FF0037}
+    .almighty {--affinity-color: #b4aeb6} /* not the real color but it's unreadable otherwise. real color is E4E2E5 */
+    .healing  {--affinity-color: #00FFA4}
+
+    .affinity, .severe {
+        color: var(--affinity-color);
+    }
+
+    .atk {color: #FF351E}
+    .def {color: #00AEFF}
+    .agi {color: #89F72E}
+    .buff {font-weight: bold}
+    .debuff {font-style: italic}
+    .null {color: #FF5FFF}
+---
+
+<h1>Conjugating <cite>Persona 5</cite> Skill Names</h1>
+<p>i love organizing things into tables that didnt need to be organized into tables</p>
+<table id="magic">
+    <caption>
+        Basic magic skill names in <cite>Persona 5 Royal</cite>
+    </caption>
+    <thead>
+        <tr>
+            <th rowspan="2">Affinity</th>
+            <th rowspan="2">Target</th>
+            <th colspan="6">Effectiveness</th>
+        </tr>
+        <tr>
+            <th><abbr title="Deals light damage">Light</abbr><br/><small><abbr title="Slightly restores HP">Slight heal</abbr></small></th>
+            <th><span class="medium"><abbr title="Deals medium damage">Medium</abbr><br/><small><abbr title="Moderately restores HP">Moderate heal</abbr></small></span></th>
+            <th><span class="heavy"><abbr title="Deals heavy damage">Heavy</abbr><br/><small><abbr title="Fully restores HP">Full heal</abbr></small></span></th>
+            <th><span class="severe"><abbr title="Deals severe damage">Severe<br/><small><abbr title="Bless and Curse skills in this tier: Half remaining HP of target">Bless/Curse: Half</abbr></small></abbr></span></th>
+            <th><span class="lowfatal"><abbr title="Small chance of instantly killing">Low insta-kill</abbr><br/><small><abbr title="Revives with 50% HP">Revive 50%</abbr></small></span></th>
+            <th><span class="highfatal"><abbr title="Medium chance of instantly killing">High insta-kill</abbr><br/><small><abbr title="Revives with all HP recovered">Revive 100%</abbr></small></span></th>
+        </tr>
+    </thead>
+    <tbody class="fire">
+        <tr>
+            <th scope="rowgroup" rowspan="2"><span class="affinity">Fire</span></th>
+            <th scope="row">One</th>
+            <td><span class="affinity">Agi</span></td>
+            <td><span class="affinity">Agi</span><span class="medium">lao</span></td>
+            <td><span class="affinity">Agi</span><span class="heavy">dyne</span></td>
+            <td><span class="severe">Inferno</span></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th scope="row"><span class="all">All</span></th>
+            <td><span class="all">Mar</span><span class="affinity">agi</span></td>
+            <td><span class="all">Mar</span><span class="affinity">agi</span><span class="medium">on</span></td>
+            <td><span class="all">Mar</span><span class="affinity">agi</span><span class="heavy">dyne</span></td>
+            <td><span class="severe">Blazing Hell</span></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tbody>
+    <tbody class="ice">
+        <tr>
+            <th scope="rowgroup" rowspan="2"><span class="affinity">Ice</span></th>
+            <th scope="row">One</th>
+            <td><span class="affinity">Bufu</span></td>
+            <td><span class="affinity">Bufu</span><span class="medium">la</span></td>
+            <td><span class="affinity">Bufu</span><span class="heavy">dyne</span></td>
+            <td><span class="severe">Diamond Dust</span></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th scope="row"><span class="all">All</span></th>
+            <td><span class="all">Ma</span><span class="affinity">bufu</span></td>
+            <td><span class="all">Ma</span><span class="affinity">bufu</span><span class="medium">la</span></td>
+            <td><span class="all">Ma</span><span class="affinity">bufu</span><span class="heavy">dyne</span></td>
+            <td><span class="severe">Ice Age</span></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tbody>
+    <tbody class="elec">
+        <tr>
+            <th scope="rowgroup" rowspan="2"><span class="affinity">Elec</span></th>
+            <th scope="row">One</th>
+            <td><span class="affinity">Zio</span></td>
+            <td><span class="affinity">Zio</span><span class="medium">nga</span></td>
+            <td><span class="affinity">Zio</span><span class="heavy">dyne</span></td>
+            <td><span class="severe">Thunder Reign</span></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th scope="row"><span class="all">All</span></th>
+            <td><span class="all">Ma</span><span class="affinity">zio</span></td>
+            <td><span class="all">Ma</span><span class="affinity">zio</span><span class="medium">nga</span></td>
+            <td><span class="all">Ma</span><span class="affinity">zio</span><span class="heavy">dyne</span></td>
+            <td><span class="severe">Wild Thunder</span></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tbody>
+    <tbody class="wind">
+        <tr>
+            <th scope="rowgroup" rowspan="2"><span class="affinity">Wind</span></th>
+            <th scope="row">One</th>
+            <td><span class="affinity">Garu</span></td>
+            <td><span class="affinity">Garu</span><span class="medium">la</span></td>
+            <td><span class="affinity">Garu</span><span class="heavy">dyne</span></td>
+            <td><span class="severe">Panta Rhei</span></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th scope="row"><span class="all">All</span></th>
+            <td><span class="all">Ma</span><span class="affinity">garu</span></td>
+            <td><span class="all">Ma</span><span class="affinity">garu</span><span class="medium">la</span></td>
+            <td><span class="all">Ma</span><span class="affinity">garu</span><span class="heavy">dyne</span></td>
+            <td><span class="severe">Vacuum Wave</span></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tbody>
+    <tbody class="psy">
+        <tr>
+            <th scope="rowgroup" rowspan="2"><span class="affinity">Psy</span></th>
+            <th scope="row">One</th>
+            <td><span class="affinity">Psi</span></td>
+            <td><span class="affinity">Psi</span><span class="medium">o</span></td>
+            <td><span class="affinity">Psi</span><span class="heavy">odyne</span></td>
+            <td><span class="severe">Psycho Force</span></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th scope="row"><span class="all">All</span></th>
+            <td><span class="all">Ma</span><span class="affinity">psi</span></td>
+            <td><span class="all">Ma</span><span class="affinity">psi</span><span class="medium">o</span></td>
+            <td><span class="all">Ma</span><span class="affinity">psi</span><span class="heavy">odyne</span></td>
+            <td><span class="severe">Psycho Blast</span></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tbody>
+    <tbody class="nuke">
+        <tr>
+            <th scope="rowgroup" rowspan="2"><span class="affinity">Nuke</span></th>
+            <th scope="row">One</th>
+            <td><span class="affinity">Frei</span></td>
+            <td><span class="affinity">Frei</span><span class="medium">la</span></td>
+            <td><span class="affinity">Frei</span><span class="heavy">dyne</span></td>
+            <td><span class="severe">Atomic Flare</span></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th scope="row"><span class="all">All</span></th>
+            <td><span class="all">Ma</span><span class="affinity">frei</span></td>
+            <td><span class="all">Ma</span><span class="affinity">frei</span><span class="medium">la</span></td>
+            <td><span class="all">Ma</span><span class="affinity">frei</span><span class="heavy">dyne</span></td>
+            <td><span class="severe">Cosmic Flare</span></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tbody>
+    <tbody class="bless">
+        <tr>
+            <th scope="rowgroup" rowspan="2"><span class="affinity">Bless</span></th>
+            <th scope="row">One</th>
+            <td><span class="affinity">Kouha</span></td>
+            <td><span class="affinity">Kou</span><span class="medium">ga</span></td>
+            <td><span class="affinity">Kou</span><span class="heavy">gaon</span></td>
+            <td><span class="severe">Divine Judgement</span></td>
+            <td><span class="affinity">Hama</span></td>
+            <td><span class="affinity">Hama</span><span class="highfatal">on</span></td>
+        </tr>
+        <tr>
+            <th scope="row"><span class="all">All</span></th>
+            <td><span class="all">Ma</span><span class="affinity">kouha</span></td>
+            <td><span class="all">Ma</span><span class="affinity">kou</span><span class="medium">ga</span></td>
+            <td><span class="all">Ma</span><span class="affinity">kou</span><span class="heavy">gaon</span></td>
+            <td></td>
+            <td><span class="all">Ma</span><span class="affinity">hama</span></td>
+            <td><span class="all">Ma</span><span class="affinity">hama</span><span class="highfatal">on</span></td>
+        </tr>
+    </tbody>
+    <tbody class="curse">
+        <tr>
+            <th scope="rowgroup" rowspan="2"><span class="affinity">Curse</span></th>
+            <th scope="row">One</th>
+            <td><span class="affinity">Eiha</span></td>
+            <td><span class="affinity">Ei</span><span class="medium">ga</span></td>
+            <td><span class="affinity">Ei</span><span class="heavy">gaon</span></td>
+            <td><span class="severe">Demonic Decree</span></td>
+            <td><span class="affinity">Mudo</span></td>
+            <td><span class="affinity">Mudo</span><span class="highfatal">on</span></td>
+        </tr>
+        <tr>
+            <th scope="row"><span class="all">All</span></th>
+            <td><span class="all">Ma</span><span class="affinity">eiha</span></td>
+            <td><span class="all">Ma</span><span class="affinity">ei</span><span class="medium">ga</span></td>
+            <td><span class="all">Ma</span><span class="affinity">ei</span><span class="heavy">gaon</span></td>
+            <td></td>
+            <td><span class="all">Ma</span><span class="affinity">mudo</span></td>
+            <td><span class="all">Ma</span><span class="affinity">mudo</span><span class="highfatal">on</span></td>
+        </tr>
+    </tbody>
+    <tbody class="almighty">
+        <tr>
+            <th scope="rowgroup" rowspan="2"><span class="affinity">Almighty</span></th>
+            <th scope="row">One</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th scope="row"><span class="all">All</span></th>
+            <td></td>
+            <td><span class="affinity">Megido</span></td>
+            <td><span class="affinity">Megido</span><span class="medium">la</span></td>
+            <td><span class="affinity">Megido</span><span class="heavy">laon</span></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tbody>
+    <tbody class="healing">
+        <tr>
+            <th scope="rowgroup" rowspan="2"><span class="affinity">Healing</span></th>
+            <th scope="row">Ally</th>
+            <td><span class="affinity">Dia</span></td>
+            <td><span class="affinity">Dia</span><span class="medium">rama</span></td>
+            <td><span class="affinity">Dia</span><span class="heavy">rahan</span></td>
+            <td></td>
+            <td><span class="affinity">Recarm</span></td>
+            <td><span class="highfatal">Sama</span><span class="affinity">recarm</span></td>
+        </tr>
+        <tr>
+            <th scope="row"><span class="all">Party</span></th>
+            <td><span class="all">Me</span><span class="affinity">dia</span></td>
+            <td><span class="all">Me</span><span class="affinity">dia</span><span class="medium">rama</span></td>
+            <td><span class="all">Me</span><span class="affinity">dia</span><span class="heavy">rahan</span></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+<ul>
+    <li>Every affinity has its own root for its ability names
+        <ul>
+            <li>Bless/curse insta-kills and healing revives get their own roots since those abilities are significantly different than the others. this is reasonable its fine</li>
+        </ul>
+    </li>
+    <li>Suffixes indicate attack severity or healing effectiveness
+        <ul>
+            <li>Tier 2: <em>-la</em> for most things, <em>-ga</em> for bless and curse, <em>-rama</em> for healing, exceptions for elec/psy to sound better and fire is an inconsistent clusterfuck</li>
+            <li>Tier 3: <em>-dyne</em> for most things (psy maintains its "o" for flow), <em>-gaon</em> for bless/curse, <em>-rahan</em> for healing</li>
+            <li>Tier 4 abandons the normal system and just assigns cool-sounding phrases as names for everything</li>
+            <li>One-hit kill bless/curse moves use the suffix <em>-on</em> for the tier 2 versions of those skills</li>
+            <li>Tier 2 revive actually uses the prefix <em>sama-</em> instead of a suffix but whatever</li>
+            <li>Almighty's &quot;tier 1&quot; is actually a medium-damage move rather than light, so everything is shifted</li>
+        </ul>
+    </li>
+    <li>Prefixes indicate a skill affects all enemies/allies instead of only one
+        <ul>
+            <li>Almost always <em>ma-</em> or <em>me-</em> which is satisfying</li>
+            <li>Almighty doesn't have single-target skills that fit into this naming scheme so there is no prefix I guess. If you want you can pretend that the <em>me-</em> in &quot;megido&quot; is a prefix and there are single-target &quot;gido&quot; skills that have just never been in any game ever</li>
+            <li>Bless/curse do not have &quot;severe damage&quot; skills and instead have skills which cut the remaining HP of the enemy in half. These skills do not have multi-target variants</li>
+        </ul>
+    </li>
+</ul>
+<table id="stats">
+    <caption>
+        Basic stat support skill names in <cite>Persona 5 Royal</cite>
+    </caption>
+    <thead>
+        <tr>
+            <th rowspan="2">Effect</th>
+            <th rowspan="2">Target</th>
+            <th colspan="3">Stat</th>
+        </tr>
+        <tr>
+            <th><span class="atk">Attack</span></th>
+            <th><span class="def">Defense</span></th>
+            <th><span class="agi">Agility</span></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="rowgroup" rowspan="2"><span class="buff">Buff party</span></th>
+            <th scope="row">One</th>
+            <td><span class="atk">Taru</span><span class="buff">kaja</span></td>
+            <td><span class="def">Raku</span><span class="buff">kaja</span></td>
+            <td><span class="agi">Suku</span><span class="buff">kaja</span></td>
+        </tr>
+        <tr>
+            <th scope="row"><span class="all">All</span></th>
+            <td><span class="all">Ma</span><span class="atk">taru</span><span class="buff">kaja</span></td>
+            <td><span class="all">Ma</span><span class="def">raku</span><span class="buff">kaja</span></td>
+            <td><span class="all">Ma</span><span class="agi">suku</span><span class="buff">kaja</span></td>
+        </tr>
+    </tbody>
+    <tbody>
+        <tr>
+            <th scope="rowgroup" rowspan="2"><span class="debuff">Debuff enemy</span></th>
+            <th scope="row">One</th>
+            <td><span class="atk">Taru</span><span class="debuff">nda</span></td>
+            <td><span class="def">Raku</span><span class="debuff">nda</span></td>
+            <td><span class="agi">Suku</span><span class="debuff">nda</span></td>
+        </tr>
+        <tr>
+            <th scope="row"><span class="all">All</span></th>
+            <td><span class="all">Ma</span><span class="atk">taru</span><span class="debuff">nda</span></td>
+            <td><span class="all">Ma</span><span class="def">raku</span><span class="debuff">nda</span></td>
+            <td><span class="all">Ma</span><span class="agi">suku</span><span class="debuff">nda</span></td>
+        </tr>
+    </tbody>
+    <tbody>
+        <tr>
+            <th scope="rowgroup" rowspan="2"><span class="null">Nullify</span> enemy <span class="buff">buffs</span></th>
+            <th scope="row">One</th>
+            <td colspan="3"></td>
+        </tr>
+        <tr>
+            <th scope="row"><span class="all">All</span></th>
+            <td colspan="3"><span class="null">De</span><span class="buff">kaja</span></td>
+        </tr>
+    </tbody>
+    <tbody>
+        <tr>
+            <th scope="rowgroup" rowspan="2"><span class="null">Nullify</span> party <span class="debuff">debuffs</span></th>
+            <th scope="row">One</th>
+            <td colspan="3"></td>
+        </tr>
+        <tr>
+            <th scope="row"><span class="all">All</span></th>
+            <td colspan="3"><span class="null">De</span>ku<span class="debuff">nda</span></td>
+        </tr>
+    </tbody>
+</table>
+<ul>
+    <li>Pretty much everything is perfectly consistent here actually except that "dekunda" has an extra "ku" thrown in for mouthfeel</li>
+    <li>Nullify skills for stats do not have single-target forms and affect all stats at once</li>
+</ul>
+<p>im not going to bother doing the barrier/reflect skills because theyre pretty self-explanatory. im also not gonna do the phys skills because they're terrifying or the gun skills because theres only like three and phys and gun have lots of non-standard things going on like crit modifiers</p>
+<p>There are also definitely other skills that fit into these categories but they don't follow any sort of consistent naming convention so they don't really fit in anywhere here. The point of this was to illustrate the meaning of the names that are all similar and follow a consistent pattern and I think I've made my point with the ones that are easy to categorize into some sort of consistent pattern so I'm stopping now</p>
+<p>Cool I Hope That Helps</p>

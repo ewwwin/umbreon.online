@@ -1,0 +1,96 @@
+html {
+	--theme-button-bg: var(--theme-light-text-color);
+	--theme-button-fg: var(--theme-dark-text-color);
+	--theme-button-a: var(--theme-button-fg);
+	--theme-button-b: transparent;
+}
+@media (prefers-color-scheme: dark) {
+	html:not([data-theme="light"]) {
+		--theme-button-bg: var(--theme-dark-text-color);
+		--theme-button-fg: var(--theme-light-text-color);
+		--theme-button-a: transparent;
+		--theme-button-b: var(--theme-button-fg);
+	}
+}
+html[data-theme="dark"] {
+	--theme-button-bg: var(--theme-light-text-color);
+	--theme-button-fg: var(--theme-light-text-color);
+	--theme-button-a: transparent;
+	--theme-button-b: var(--theme-button-fg);
+}
+
+/* make room for the buttons */
+body {
+	margin-bottom: 3rem;
+}
+
+.theme-button {
+	position: fixed;
+	bottom: 1rem;
+	right: 1rem;
+	margin: 0;
+	padding: 0;
+	width: 3rem;
+	height: 3rem;
+	border-radius: 50%;
+	line-height: 1;
+	text-align: center;
+	background: var(--text-color);
+	border: none;
+	color: var(--theme-button-bg);
+	font-size: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	opacity: 0.8;
+}
+.theme-button + .theme-button {
+	right: 5rem;
+}
+
+.theme-toggle-button {
+	transform: rotate(45deg);
+}
+.theme-toggle-button::before {
+	content: "";
+	display: block;
+	width: 1rem;
+	height: 1rem;
+	border: 0.5rem solid var(--theme-button-a);
+	border-top-color: var(--theme-button-b);
+	border-right-color: var(--theme-button-b);
+	border-radius: 1rem;
+}
+.theme-toggle-button::after {
+	content: "";
+	display: block;
+	border: 0.5rem solid var(--theme-button-b);
+	border-top-color: var(--theme-button-a);
+	border-right-color: var(--theme-button-a);
+	border-radius: 0.5rem;
+	margin-inline-start: -1.5rem;
+	margin-inline-end: 0.5rem;
+}
+
+.theme-reset-button::before {
+	content: "";
+	display: block;
+	width: 1rem;
+	height: 1rem;
+	border: 0.5rem solid var(--theme-button-fg);
+	border-radius: 50%;
+	border-left-color:transparent;
+}
+.theme-reset-button::after {
+	content: "";
+	display: block;
+	border: 0.45rem solid var(--theme-button-fg);
+	border-top-color: transparent;
+	border-right-color: transparent;
+	position: absolute;
+	transform: translate(-0.5rem,-0.52rem);
+}
+
+html:not([data-local-theme]) .theme-reset-button {
+	display: none;
+}

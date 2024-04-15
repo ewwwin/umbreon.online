@@ -1,1 +1,8 @@
+plugins:
+- jekyll-optional-front-matter
 
+defaults:
+- scope: {path: ""}
+  values:
+    layout: default
+    themable: yes
