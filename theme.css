@@ -19,11 +19,6 @@ html[data-theme="dark"] {
 	--theme-button-b: var(--theme-button-fg);
 }
 
-/* make room for the buttons */
-body {
-	margin-bottom: 3rem;
-}
-
 .theme-button {
 	position: fixed;
 	bottom: 1rem;
