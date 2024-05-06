@@ -9,7 +9,7 @@ yeah this is just a silly little website for hosting silly things that come out 
 ## Some Bullshit You Can Find Here
 
 - [Conjugating <cite>Persona 5</cite> Skill Names](/p5skills)
-- probably additional things eventually
+- [A Minimal Konsole Tab Bar Stylesheet](/konsole-css)
 
 ## by the way who the fuck are you
 my name is erin and i am <a rel="me" href="https://tired.umbreon.online/@erin">@erin@tired.umbreon.online</a> on the fediverse and i dont exist anywhere else (this is sarcasm i do have other accounts but i try to avoid linking to all my online presences from each other. if you know me from somewhere else no u dont)
