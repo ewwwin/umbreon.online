@@ -68,6 +68,24 @@ ul {
 	/* en dash */
 	list-style-type: "\2013  ";
 }
+pre, code {
+	font-family: "Cousine", monospace;
+}
+pre {
+	padding-inline: 1.5em;
+	position: relative;
+}
+pre::before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: 1px;
+	background: currentcolor;
+	opacity: 0.5;
+}
 
 caption, figcaption {
 	font-style: italic;
