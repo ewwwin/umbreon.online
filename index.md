@@ -18,6 +18,6 @@ i use it/its pronouns. if you know me from somewhere else where i list she/her p
 
 im a web developer type person except for that last part. i mostly know too much css and am on a mission to be bad at every frontend framework. i also work on browser extensions which means i have an above-average amount of hatred in my heart for google chrome
 
-i also run [webring.umbreon.online](https://webring.umbreon.online) and have some of my code stuff on my [personal git server](https://git.ewin.moe/erin)
+i also run [webring.umbreon.online](https://webring.umbreon.online) and have some of my code stuff on my [personal git server](https://git.ewin.moe/erin) (or [my personal github account](https://github.com/ewwwin) which pretty much only has github pages sites like this one in it)
 
 other than that im kind of boring. local chronically sleepy transfem doesnt have interesting content for website homepage, more at 11. check out the webring for more sites run by cool folks
