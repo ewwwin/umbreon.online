@@ -27,10 +27,9 @@
 		<main>{{content}}</main>
 		<footer>
 			<p>
-				{%- if page.content-updated -%}
-				Page content updated <time datetime="{{page.content-updated | date_to_xmlschema}}">{{page.content-updated | date_to_string}}</time>.
-				{%- endif %}
-				Site updated <time datetime="{{site.time | date_to_xmlschema}}">{{site.time | date_to_string}}</time>.
+				{% assign updated = page.content-updated | default: page.date -%}
+				Page content updated <time datetime="{{updated | date_to_xmlschema}}">{{updated | date_to_string}}</time>.
+				Site built <time datetime="{{site.time | date_to_xmlschema}}">{{site.time | date_to_string}}</time>.
 			</p>
 			<nav>
 				<p><a href="/">home</a> · <a href="/pay">pay transparency</a>
