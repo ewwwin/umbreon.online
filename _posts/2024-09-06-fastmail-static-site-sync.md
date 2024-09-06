@@ -3,10 +3,15 @@ permalink: /fastmail-site-hosting
 title: A Minimal Konsole Tab Bar Stylesheet
 style: |
     .silly { margin-block: 2rem; }
-    .silly :is(h1, h2, h3, h4, h5, h6) {
+    .silly * {
         margin: 0;
-        text-align: justify;
-        text-align-last: justify;
+        text-align: center;
+    }
+    @media (min-width: 56rem) {
+        .silly * {
+            text-align: justify;
+            text-align-last: justify;
+        }
     }
 ---
 
