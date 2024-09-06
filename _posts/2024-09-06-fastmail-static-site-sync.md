@@ -1,6 +1,6 @@
 ---
 permalink: /fastmail-site-hosting
-title: A Minimal Konsole Tab Bar Stylesheet
+title: Oddly Specific Guide to Hosting Static Sites on Fastmail
 style: |
     .silly { margin-block: 2rem; }
     .silly * {
@@ -12,6 +12,20 @@ style: |
             text-align: justify;
             text-align-last: justify;
         }
+    }
+    :root {
+        --theme-light-text-color: hsla(45, 100%, 4%, 0.9);
+        --theme-light-body-background:
+            linear-gradient(50deg,  hsla(207,100%,87%,0.9), transparent 50%),
+            linear-gradient(180deg, hsla(205,72%,87%,0.9), transparent 66%),
+            linear-gradient(290deg, hsla(45,100%,77%,0.9), transparent 66%),
+            white;
+        --theme-dark-text-color: hsla(45, 100%, 97%, 0.9);
+        --theme-dark-body-background:
+            linear-gradient(50deg,  hsla(207,100%,18%,0.9), transparent 75%),
+            linear-gradient(180deg, hsla(205,72%,18%,0.9), transparent 66%),
+            linear-gradient(290deg, hsla(45,100%,20%,0.9), transparent 78%),
+            black;
     }
 ---
 
