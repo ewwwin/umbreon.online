@@ -10,16 +10,18 @@
 		<link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&family=Cousine:ital@0;1&display=swap" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="/style.css">
 
-		{%- if page.themable -%}
+		{% if page.themable -%}
 		<!-- included before content to avoid flashing -->
 		<script src="/theme.js"></script>
 		<!-- only include styles for theme buttons if JS is allowed -->
 		<script>document.write('<link rel="stylesheet" type="text/css" href="/theme.css">')</script>
-		{%- endif -%}
+		{%- endif %}
 
-		{%- if page.style -%}
-		<style title="page-specific inline style">{{page.style}}</style>
-		{%- endif -%}
+		{% if page.style -%}
+		<style title="page-specific inline style">
+{{page.style | strip}}
+		</style>
+		{%- endif %}
 	</head>
 	<body>
 		<main>{{content}}</main>
@@ -36,7 +38,7 @@
 			<p><a href="https://webring.umbreon.online/prev?from=https://umbreon.online">⇠</a> <a href="https://webring.umbreon.online">i run a webring btw</a> <a href="https://webring.umbreon.online/next?from=https://umbreon.online">⇢</a></p>
 		</footer>
 
-		{%- if page.themable -%}
+		{% if page.themable -%}
 		<!-- Only add the theme button to the page if JS is allowed -->
 		<script>
 			document.write(`
