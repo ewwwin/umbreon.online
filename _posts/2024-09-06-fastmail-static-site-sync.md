@@ -61,6 +61,13 @@ subdomain to your apex domain so Fastmail will be serving both domains, and then
 set up a second website in Fastmail for the `www` subdomain and just set it to
 redirect to your canonical URL.
 
+and just as a note: setting a low TTL on your DNS records will not save you from
+having to wait a long time for Fastmail to re-fetch your records if you fuck up
+the first time and have to change them. even with a TTL of 30s, i still waited
+at least half an hour before the new records took effect, and the "re-check DNS"
+button in domain settings doesn't seem to refresh its view of non-mail records
+so there's literally nothing you can do about it.
+
 god i love computers.
 
 [fastmail-webdav]: https://www.fastmail.help/hc/en-us/articles/1500000277882-Remote-file-access
