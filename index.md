@@ -1,6 +1,12 @@
 ---
 title: an umbreon on the FUCKING internet
-content-updated: 2024-04-14
+content-updated: 2024-11-07
+style: |
+    .buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5em;
+    }
 ---
 # Hey Erin What The Fuck Is This
 
@@ -27,3 +33,48 @@ im a web developer type person except for that last part. i mostly know too much
 i also run [webring.umbreon.online](https://webring.umbreon.online) and have some of my code stuff on my [personal git server](https://git.ewin.moe/erin) (or [my personal github account](https://github.com/ewwwin) which pretty much only has github pages sites like this one in it)
 
 other than that im kind of boring. local chronically sleepy transfem doesnt have interesting content for website homepage, more at 11. check out the webring for more sites run by cool folks
+
+## it is the current year and this is a queer personal website, where the heck are the 88x31s
+
+<div class="buttons">
+    <picture onclick="alert('hehe that tickles')">
+        <source
+            media="(prefers-reduced-motion)"
+            srcset="/assets/88x31/umbreon_dot_online_static.gif"
+        >
+        <img
+            alt="umbreon.online"
+            title="umbreon.online"
+            src="/assets/88x31/umbreon_dot_online.gif"
+        >
+    </picture>
+    <a href="https://loveshock.xyz">
+        <picture>
+            <source
+                media="(prefers-reduced-motion)"
+                srcset="/assets/88x31/loveshock_sonic.png"
+            >
+            <img
+                alt="the jukebox at loveshock.xyz"
+                title="the jukebox at loveshock.xyz"
+                src="/assets/88x31/loveshock.gif"
+            >
+        </picture>
+    </a>
+    <a href="https://tempest.dev">
+        <img
+            alt="tempest.dev"
+            title="tempest.dev"
+            src="/assets/88x31/tempest.dev.png"
+        >
+    </a>
+    <a href="https://elke.cafe">
+        <img
+            alt="elke.cafe"
+            title="elke.cafe"
+            src="/assets/88x31/elke.cafe.gif"
+        >
+    </a>
+</div>
+
+if you are a friend and you want to exchange buttons poke me on fedi or something. i like buttons
