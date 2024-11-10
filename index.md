@@ -75,6 +75,13 @@ other than that im kind of boring. local chronically sleepy transfem doesnt have
             src="/assets/88x31/elke.cafe.gif"
         >
     </a>
+    <a href="https://astrid.tech">
+        <img
+            alt="astrid.tech"
+            title="astrid.tech"
+            src="/assets/88x31/astriddottech.png"
+        >
+    </a>
 </div>
 
 if you are a friend and you want to exchange buttons poke me on fedi or something. i like buttons
