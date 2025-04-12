@@ -73,14 +73,14 @@ other than that im kind of boring. local chronically sleepy transfem doesnt have
         <img
             alt="40796c19"
             title="40796c19"
-            src="/img/88x31/40796c19.png"
+            src="/assets/88x31/40796c19.png"
         >
     </a>
     <a href="https://stella.lifeless.space">
         <img
             alt="void priestess stella"
             title="void priestess stella"
-            src="/img/88x31/0x57e11a.png"
+            src="/assets/88x31/0x57e11a.png"
         >
     </a>
 </div>
