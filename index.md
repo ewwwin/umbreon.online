@@ -48,19 +48,6 @@ other than that im kind of boring. local chronically sleepy transfem doesnt have
             src="/assets/88x31/umbreon_dot_online.gif"
         >
     </picture>
-    <a href="https://loveshock.xyz">
-        <picture>
-            <source
-                media="(prefers-reduced-motion)"
-                srcset="/assets/88x31/loveshock_sonic.png"
-            >
-            <img
-                alt="the jukebox at loveshock.xyz"
-                title="the jukebox at loveshock.xyz"
-                src="/assets/88x31/loveshock.gif"
-            >
-        </picture>
-    </a>
     <a href="https://tempest.dev">
         <img
             alt="tempest.dev"
@@ -80,6 +67,20 @@ other than that im kind of boring. local chronically sleepy transfem doesnt have
             alt="astrid.tech"
             title="astrid.tech"
             src="/assets/88x31/astriddottech.png"
+        >
+    </a>
+    <a href="https://0x0079.codeberg.page">
+        <img
+            alt="40796c19"
+            title="40796c19"
+            src="/img/88x31/40796c19.png"
+        >
+    </a>
+    <a href="https://stella.lifeless.space">
+        <img
+            alt="void priestess stella"
+            title="void priestess stella"
+            src="/img/88x31/0x57e11a.png"
         >
     </a>
 </div>
