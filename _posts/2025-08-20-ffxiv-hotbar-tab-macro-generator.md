@@ -54,13 +54,12 @@ After copying all your macros, you'll need to set up your layout for the first t
 
 At this point you're ready to customize the appearance of all your tabs. Press a tab button, customize however you like, and then run the corresponding "Save" macro for that tab.
 
-<noscript>
-    <hr>
-    <p>This tool requires Javascript to run, sorry.</p>
-    <style>#app {display: none}</style>
-</noscript>
 <div id="app">
     <h2>Let's Generate You Some Macros</h2>
+    <noscript>
+        <p>This tool requires Javascript to run, sorry.</p>
+        <style>#app form {display: none}</style>
+    </noscript>
     <form id="params">
         <p><label>
             Tabs to generate:
