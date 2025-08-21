@@ -66,6 +66,7 @@ A little tool for making fancy tabbed HUD layouts in FFXIV.
                         <option selected>/hotbar</option>
                         <option>/pvphotbar</option>
                         <option>/crosshotbar</option>
+                        <option>/pvpcrosshotbar</option>
                     </select>
                 </label>
             </p>
