@@ -4,19 +4,12 @@ title: Hotbar Tabs Macro Generator for Final Fantasy XIV
 title_md: Hotbar Tabs Macro Generator for <cite>Final Fantasy XIV</cite>
 category: tools
 style: |
-    html {display: block}
-    body {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        min-height: 100vh;
-    }
-    #app {
+    .box {
         margin-block: 1em;
         padding-inline-start: 1.5em;
         position: relative;
     }
-    #app::before {
+    .box::before {
         content: "";
         display: block;
         position: absolute;
@@ -27,34 +20,21 @@ style: |
         background: currentcolor;
         opacity: 0.5;
     }
+    label {margin-inline-end: 0.5rem}
+    /* stupid hack */
+    label + label {white-space: nowrap}
 ---
 # Hotbar Tabs Generator
 
 A little tool for making fancy tabbed HUD layouts in FFXIV.
 
 {% include image.html
-	src="/assets/xiv-hotbar-tabs.gif"
+	src="/assets/xiv-hotbar-tabs/top.gif"
 	alt="Screen recording of a tabbed hotbar interface in FFXIV. The first tab starts open; the second is opened, then the third, then an item is removed from the first and saved."
 %}
 
-## How-To
 
-- Fill in how many tabs you want.
-- Select which hotbars will be controlled by the tabs. The tab buttons themselves will also live on one of these bars, so plan accordingly to make sure you have enough slots to fit everything you want.
-- Click "Generate" and copy/paste the resulting macros into your macro list.
-  - The "Open" macros display the specified tab on your hotbars.
-  - The "Save" macros save the current layout of your hotbars into the specified tab.
-
-After copying all your macros, you'll need to set up your layout for the first time.
-
-- Make sure the selected hotbars are set to shared. This is done in Character configuration > Hotbars > Sharing.
-- Clear these hotbars and set up the layout for your tabs however you like, making sure each "Open" macro is added somewhere.
-- In the "User Macros" window, go down the list of "Save" macros you copied, and run every single one in sequence (right-click > Execute on each). This will save your base layout to all your tabs.
-- Try out each tab button. If you've done everything correctly, nothing should change when you click each tab. If the buttons disappear, you've done something wrong.
-
-At this point you're ready to customize the appearance of all your tabs. Press a tab button, customize however you like, and then run the corresponding "Save" macro for that tab.
-
-<div id="app">
+<div id="app" class="box">
     <h2>Let's Generate You Some Macros</h2>
     <noscript>
         <p>This tool requires Javascript to run, sorry.</p>
@@ -62,11 +42,11 @@ At this point you're ready to customize the appearance of all your tabs. Press a
     </noscript>
     <form id="params">
         <p><label>
-            Tabs to generate:
-            <input type="number" name="tabs" min=2 max=9 value=3>
+            Number of tabs:
+            <input type="number" name="tabs" value=3>
         </label></p>
         <p>
-            Hotbars controlled by tabs:
+            Hotbars controlled by tabs (these must be shared):<br>
             <label><input type=checkbox name=hotbars value=1> 1</label>
             <label><input type=checkbox name=hotbars value=2> 2</label>
             <label><input type=checkbox name=hotbars value=3> 3</label>
@@ -78,13 +58,59 @@ At this point you're ready to customize the appearance of all your tabs. Press a
             <label><input type=checkbox name=hotbars value=9 checked> 9</label>
             <label><input type=checkbox name=hotbars value=10 checked> 10</label>
         </p>
-        <button>Generate</button>
+        <details class="box">
+            <summary>Advanced options...</summary>
+            <p>
+                <label><input type=checkbox name=classjobs value=current> Make tab 1 job-dependent</label>
+                <br><small>(disable saving to combat jobs if you use this; see <a href="#advanced-tips">caveats below</a>)</small>
+            </p>
+            <p>Classes/jobs for storing tabs:</p>
+            <div style="padding-inline-start: 1.5rem">
+                <p>
+                    <em>Combat classes:</em> <button type=button onclick="toggleClassjobs('class')">Toggle All</button><br>
+                    <label><input type=checkbox name=classjobs data-type="class" value=GLA checked> GLA</label>
+                    <label><input type=checkbox name=classjobs data-type="class" value=MRD checked> MRD</label>
+                    <label><input type=checkbox name=classjobs data-type="class" value=LNC checked> LNC</label>
+                    <label><input type=checkbox name=classjobs data-type="class" value=PGL checked> PGL</label>
+                    <label><input type=checkbox name=classjobs data-type="class" value=ARC checked> ARC</label>
+                    <label><input type=checkbox name=classjobs data-type="class" value=THM checked> THM</label>
+                    <label><input type=checkbox name=classjobs data-type="class" value=CNJ checked> CNJ</label>
+                    <label><input type=checkbox name=classjobs data-type="class" value=ACN checked> ACN</label>
+                    <label><input type=checkbox name=classjobs data-type="class" value=ROG checked> ROG</label>
+                </p>
+                <p>
+                    <em>Combat jobs:</em> <button type=button onclick="toggleClassjobs('job')">Toggle All</button><br>
+                    <label><input type=checkbox name=classjobs data-type="job" value=PLD checked> PLD</label>
+                    <label><input type=checkbox name=classjobs data-type="job" value=WAR checked> WAR</label>
+                    <label><input type=checkbox name=classjobs data-type="job" value=DRG checked> DRG</label>
+                    <label><input type=checkbox name=classjobs data-type="job" value=MNK checked> MNK</label>
+                    <label><input type=checkbox name=classjobs data-type="job" value=BRD checked> BRD</label>
+                    <label><input type=checkbox name=classjobs data-type="job" value=BLM checked> BLM</label>
+                    <label><input type=checkbox name=classjobs data-type="job" value=WHM checked> WHM</label>
+                    <label><input type=checkbox name=classjobs data-type="job" value=SMN checked> SMN</label>
+                    <label><input type=checkbox name=classjobs data-type="job" value=SCH checked> SCH</label>
+                    <label><input type=checkbox name=classjobs data-type="job" value=NIN checked> NIN</label>
+                    <label><input type=checkbox name=classjobs data-type="job" value=DRK checked> DRK</label>
+                    <label><input type=checkbox name=classjobs data-type="job" value=MCH checked> MCH</label>
+                    <label><input type=checkbox name=classjobs data-type="job" value=AST checked> AST</label>
+                    <label><input type=checkbox name=classjobs data-type="job" value=SAM checked> SAM</label>
+                    <label><input type=checkbox name=classjobs data-type="job" value=RDM checked> RDM</label>
+                    <label><input type=checkbox name=classjobs data-type="job" value=BLU checked> BLU</label>
+                    <label><input type=checkbox name=classjobs data-type="job" value=GNB checked> GNB</label>
+                    <label><input type=checkbox name=classjobs data-type="job" value=DNC checked> DNC</label>
+                    <label><input type=checkbox name=classjobs data-type="job" value=RPR checked> RPR</label>
+                    <label><input type=checkbox name=classjobs data-type="job" value=SGE checked> SGE</label>
+                    <label><input type=checkbox name=classjobs data-type="job" value=VPR checked> VPR</label>
+                    <label><input type=checkbox name=classjobs data-type="job" value=PCT checked> PCT</label>
+                </p>
+                <p><em>crafter/gatherers maybe eventually:tm:</em></p>
+            </div>
+        </details>
+        <p><button>Generate</button></p>
     </form>
     <div id="output"></div>
 </div>
 <script>
-    const allClasses = ['GLA', 'MRD', 'LNC', 'PGL', 'ARC', 'THM', 'CNJ', 'ACN', 'ROG', 'PLD', 'WAR', 'DRG'];
-    const allJobs = ['PLD', 'WAR', 'DRG', 'MNK', 'BRD', 'BLM', 'WHM', 'SMN', 'SCH', 'NIN', 'DRK', 'MCH', 'AST', 'SAM', 'RDM', 'BLU', 'GNB', 'DNC', 'RPR', 'SGE', 'VPR', 'PCT'];
     function generateTabMacros (classjobs, hotbars) {
         return classjobs.map((classjob, i) => ({
             open: hotbars.map(hotbar => `/hotbar copy ${classjob} ${hotbar} share ${hotbar}`).join('\n'),
@@ -98,7 +124,8 @@ At this point you're ready to customize the appearance of all your tabs. Press a
         const data = new FormData(event.target);
         const tabCount = parseInt(data.get('tabs'), 10);
         const hotbars = data.getAll('hotbars');
-        const macros = generateTabMacros([...allClasses, ...allJobs].slice(0, tabCount), hotbars);
+        const classjobs = data.getAll('classjobs');
+        const macros = generateTabMacros(classjobs.slice(0, tabCount), hotbars);
         output.innerHTML = '<h2>Output</h2>';
         macros.forEach((tab, i) => {
             output.innerHTML += `
@@ -110,7 +137,44 @@ At this point you're ready to customize the appearance of all your tabs. Press a
             `;
         });
     });
+    /* advanced settings button helpers */
+    function toggleClassjobs(type) {
+        const inputs = document.querySelectorAll(`input[name=classjobs][data-type=${type}]`);
+        if ([...inputs].every(input => input.checked)) {
+            inputs.forEach(input => input.checked = false);
+        } else {
+            inputs.forEach(input => input.checked = true);
+        }
+    }
 </script>
+
+## How-To
+
+- Fill in how many tabs you want.
+- Select which hotbars will be controlled by the tabs. The tab buttons themselves will also live on one of these bars, so plan accordingly to make sure you have enough slots to fit everything you want.
+- Click "Generate" and copy/paste the resulting macros into your macro list.
+  - The "Open" macros display the specified tab on your hotbars.
+  - The "Save" macros save the current layout of your hotbars into the specified tab.
+
+After copying all your macros, you'll need to set up your layout for the first time.
+
+- Make sure the selected hotbars are set to shared. This is done in Character configuration > Hotbars > Sharing.
+  {% include image.html
+      src="/assets/xiv-hotbar-tabs/sharing.png"
+      alt="Screenshot of the sharing menu"
+  %}
+- Clear these hotbars and set up the layout for your tabs however you like, making sure each "Open" macro is added somewhere.
+- In the "User Macros" window, go down the list of "Save" macros you copied, and run every single one in sequence (right-click > Execute on each). This will save your base layout to all your tabs.
+  {% include image.html
+      src="/assets/xiv-hotbar-tabs/setup-1.gif"
+      alt="Screen recording of the &quot;Open&quot; macros being dragged from the macros window into a hotbar, and the &quot;Save&quot; macros being run in sequence afterwards"
+  %}
+- Try out each tab button. If you've done everything correctly, nothing should change when you click each tab. If the buttons disappear, you've done something wrong.
+- At this point you're ready to customize the appearance of all your tabs. Press a tab button, customize however you like, and then run the corresponding "Save" macro for that tab.
+{% include image.html
+    src="assets/xiv-hotbar-tabs/setup-2.gif"
+    alt="Screen recording of a tab button being clicked, the tab's &quot;Open&quot; macro being dragged to replace the tab button, and several abilities being dragged into the tab. The save button is clicked, a second tab is opened, and the first is reopened to demonstrate that the changes were saved"
+%}
 
 ## How it Works & Caveats
 
