@@ -1,6 +1,6 @@
 ---
 title: Erin's Compensation History
-content-updated: 2024-04-15
+content-updated: 2025-08-21
 style: |
     :root {
         --theme-light-text-color: hsla(103, 100%, 4%, 0.9);
