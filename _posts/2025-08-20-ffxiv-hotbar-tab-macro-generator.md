@@ -3,24 +3,23 @@ permalink: /ffxiv-hotbar-tab-macro-generator
 title: Hotbar Tabs Macro Generator for Final Fantasy XIV
 title_md: Hotbar Tabs Macro Generator for <cite>Final Fantasy XIV</cite>
 category: tools
+stylesheets:
+  - /interactive.css
 style: |
-    .box {
-        margin-block: 1em;
-        padding-inline-start: 1.5em;
-        position: relative;
+    :root {
+        --theme-light-text-color: hsla(360, 100%, 4%, 0.9);
+        --theme-light-body-background:
+            linear-gradient(50deg,  hsla(360,58.1%,88%,0.9), transparent 50%),
+            linear-gradient(180deg, hsla(20,58.1%,88%,0.9), transparent 66%),
+            linear-gradient(290deg, hsla(32,58.1%,88%,0.9), transparent 66%),
+            white;
+        --theme-dark-text-color: hsla(360, 100%, 97%, 0.9);
+        --theme-dark-body-background:
+            linear-gradient(50deg,  hsla(360,58.1%,12%,0.9), transparent 75%),
+            linear-gradient(180deg, hsla(20,58.1%,12%,0.9), transparent 66%),
+            linear-gradient(290deg, hsla(32,58.1%,12%,0.9), transparent 78%),
+            black;
     }
-    .box::before {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        width: 1px;
-        background: currentcolor;
-        opacity: 0.5;
-    }
-    label {margin-inline-end: 0.5rem}
     /* stupid hack */
     label + label {white-space: nowrap}
 ---

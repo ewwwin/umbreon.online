@@ -1,0 +1,60 @@
+html {
+	--theme-light-text-color-secondary: color(from var(--theme-light-text-color) srgb r g b / 0.3);
+	--theme-light-text-color-as-bg: color(from var(--theme-light-text-color) srgb r g b / 0.1);
+	--theme-dark-text-color-secondary: color(from var(--theme-dark-text-color) srgb r g b / 0.4);
+	--theme-dark-text-color-as-bg: color(from var(--theme-dark-text-color) srgb r g b / 0.2);
+
+	--text-color-secondary: var(--theme-light-text-color-secondary);
+	--text-color-as-bg: var(--theme-light-text-color-as-bg);
+}
+@media (prefers-color-scheme: dark) {
+	html:not([data-theme="light"]) {
+		--text-color-secondary: var(--theme-dark-text-color-secondary);
+		--text-color-as-bg: var(--theme-dark-text-color-as-bg);
+	}
+}
+html[data-theme="dark"] {
+	--text-color-secondary: var(--theme-dark-text-color-secondary);
+	--text-color-as-bg: var(--theme-dark-text-color-as-bg);
+}
+
+.box {
+	margin-block: 1em;
+	padding-inline-start: 1.5em;
+	position: relative;
+}
+.box::before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: 1px;
+	background: currentcolor;
+	opacity: 0.5;
+}
+label {margin-inline-end: 0.5rem}
+/* i am feeling so lazy rn */
+input[type=checkbox],
+input[type=radio] {
+	accent-color: var(--text-color);
+}
+
+button, select, input[type=number] {
+	font: inherit;
+	color: inherit;
+	background: none;
+	border: none;
+	border-radius: none;
+	border-radius: 0.15rem;
+	padding-inline: 0.5rem;
+	padding-block: 0.15rem;
+	line-height: 1;
+}
+button, select {
+	background: var(--text-color-as-bg);
+}
+input[type=number] {
+	box-shadow: inset 0 0 0 1px var(--text-color-secondary);
+}

@@ -17,9 +17,14 @@
 		<script>document.write('<link rel="stylesheet" type="text/css" href="/theme.css">')</script>
 		{%- endif %}
 
+		{% if page.stylesheets -%}
+		{%- for s in page.stylesheets -%}
+		<link rel="stylesheet" type="text/css" href="{{s}}">
+		{%- endfor -%}
+		{%- endif %}
 		{% if page.style -%}
 		<style title="page-specific inline style">
-{{page.style | strip}}
+		{{page.style | strip}}
 		</style>
 		{%- endif %}
 	</head>
