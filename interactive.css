@@ -47,9 +47,10 @@ button, select, input[type=number] {
 	background: none;
 	border: none;
 	border-radius: none;
-	border-radius: 0.15rem;
+	border-radius: 0.25rem;
 	padding-inline: 0.5rem;
-	padding-block: 0.15rem;
+	padding-block: 0;
+	height: 1.5em;
 	line-height: 1;
 }
 button, select {
