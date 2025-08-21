@@ -33,6 +33,5 @@ Here's a list of all the jobs I remember having and how much each one paid me. I
 
 Job Title | Pay | Start | End
 -|-|-|-|-
-Junior Robot Technician | $12.45/hr | 2024-02 | *Current*
 Software Development Intern | $18/hr | 2021-05 | 2022-10
 Software Development Intern | $17/hr | 2020-06 | 2020-09
