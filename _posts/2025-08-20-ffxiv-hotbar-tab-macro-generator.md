@@ -61,6 +61,16 @@ A little tool for making fancy tabbed HUD layouts in FFXIV.
         <details class="box">
             <summary>Advanced options...</summary>
             <p>
+                <label>
+                    Hotbar command:
+                    <select name=hotbarcmd>
+                        <option selected>/hotbar</option>
+                        <option>/pvphotbar</option>
+                        <option>/crosshotbar</option>
+                    </select>
+                </label>
+            </p>
+            <p>
                 <label><input type=checkbox name=classjobs value=current> Make tab 1 job-dependent</label>
                 <br><small>(disable saving to combat jobs if you use this; see <a href="#advanced-tips">caveats below</a>)</small>
             </p>
@@ -111,10 +121,10 @@ A little tool for making fancy tabbed HUD layouts in FFXIV.
     <div id="output"></div>
 </div>
 <script>
-    function generateTabMacros (classjobs, hotbars) {
+    function generateTabMacros (command, classjobs, hotbars) {
         return classjobs.map((classjob, i) => ({
-            open: hotbars.map(hotbar => `/hotbar copy ${classjob} ${hotbar} share ${hotbar}`).join('\n'),
-            save: hotbars.map(hotbar => `/hotbar copy share ${hotbar} ${classjob} ${hotbar}`).join('\n'),
+            open: hotbars.map(hotbar => `${command} copy ${classjob} ${hotbar} share ${hotbar}`).join('\n'),
+            save: hotbars.map(hotbar => `${command} copy share ${hotbar} ${classjob} ${hotbar}`).join('\n'),
         }));
     }
     const form = document.getElementById('params');
@@ -125,7 +135,8 @@ A little tool for making fancy tabbed HUD layouts in FFXIV.
         const tabCount = parseInt(data.get('tabs'), 10);
         const hotbars = data.getAll('hotbars');
         const classjobs = data.getAll('classjobs');
-        const macros = generateTabMacros(classjobs.slice(0, tabCount), hotbars);
+        const command = data.get('hotbarcmd');
+        const macros = generateTabMacros(command, classjobs.slice(0, tabCount), hotbars);
         output.innerHTML = '<h2>Output</h2>';
         macros.forEach((tab, i) => {
             output.innerHTML += `
