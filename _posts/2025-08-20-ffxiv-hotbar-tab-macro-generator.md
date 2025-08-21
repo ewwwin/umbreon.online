@@ -2,6 +2,7 @@
 permalink: /ffxiv-hotbar-tab-macro-generator
 title: Hotbar Tabs Macro Generator for Final Fantasy XIV
 title_md: Hotbar Tabs Macro Generator for <cite>Final Fantasy XIV</cite>
+content-updated: 2025-08-21
 category: tools
 stylesheets:
   - /interactive.css
