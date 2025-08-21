@@ -140,9 +140,9 @@ A little tool for making fancy tabbed HUD layouts in FFXIV.
         macros.forEach((tab, i) => {
             output.innerHTML += `
                 <h3>Tab ${i + 1}</h3>
-                <p>Open tab ${i + 1} <button onclick="navigator.clipboard.writeText(${JSON.stringify(tab.open)});this.text='Copied!'">Copy macro</button></p>
+                <p>Open tab ${i + 1} <button onclick='navigator.clipboard.writeText(${JSON.stringify(tab.open)})'>Copy macro</button></p>
                 <pre>${tab.open}</pre>
-                <p>Save tab ${i + 1} <button onclick="navigator.clipboard.writeText(${JSON.stringify(tab.save)})">Copy macro</button></p>
+                <p>Save tab ${i + 1} <button onclick='navigator.clipboard.writeText(${JSON.stringify(tab.save)})'>Copy macro</button></p>
                 <pre>${tab.save}</pre>
             `;
         });
