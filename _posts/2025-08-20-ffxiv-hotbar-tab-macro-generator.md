@@ -182,10 +182,10 @@ After copying all your macros, you'll need to set up your layout for the first t
   %}
 - Try out each tab button. If you've done everything correctly, nothing should change when you click each tab. If the buttons disappear, you've done something wrong.
 - At this point you're ready to customize the appearance of all your tabs. Press a tab button, customize however you like, and then run the corresponding "Save" macro for that tab.
-{% include image.html
-    src="assets/xiv-hotbar-tabs/setup-2.gif"
-    alt="Screen recording of a tab button being clicked, the tab's &quot;Open&quot; macro being dragged to replace the tab button, and several abilities being dragged into the tab. The save button is clicked, a second tab is opened, and the first is reopened to demonstrate that the changes were saved"
-%}
+  {% include image.html
+      src="assets/xiv-hotbar-tabs/setup-2.gif"
+      alt="Screen recording of a tab button being clicked, the tab's &quot;Open&quot; macro being dragged to replace the tab button, and several abilities being dragged into the tab. The save button is clicked, a second tab is opened, and the first is reopened to demonstrate that the changes were saved"
+  %}
 
 ## How it Works & Caveats
 
