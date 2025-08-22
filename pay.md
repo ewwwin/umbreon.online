@@ -19,6 +19,7 @@ style: |
     table {
         margin-inline: auto;
         margin-block: 1em;
+        border-collapse: collapse;
     }
     th {
         border-bottom: 1px dotted currentcolor;

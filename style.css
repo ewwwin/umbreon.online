@@ -42,7 +42,13 @@ body {
 	background-attachment: fixed;
 	color: white;
 	color: var(--text-color);
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	justify-content: space-between;
 }
+/* helps visually center short <main> content while keeping footer at the bottom of the page */
+body::before {content: ""}
 
 a {
 	color: inherit;

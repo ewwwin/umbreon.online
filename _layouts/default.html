@@ -7,8 +7,9 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&family=Cousine:ital@0;1&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&family=Cousine:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="/style.css">
+		<link rel="stylesheet" type="text/css" href="/rouge.css">
 
 		{% if page.themable -%}
 		<!-- included before content to avoid flashing -->
@@ -43,8 +44,8 @@
 			<p><a title="previous site" href="https://on-the.fringe.lifeless.space/prev?slug=erin">⇠</a> <a href="https://on-the.fringe.lifeless.space">on-the.fringe.lifeless.space</a> <a title="next site" href="https://on-the.fringe.lifeless.space/next?slug=erin">⇢</a></p>
 		</footer>
 
+		{% comment %} Only add the theme button to the page if JS is allowed {% endcomment -%}
 		{% if page.themable -%}
-		<!-- Only add the theme button to the page if JS is allowed -->
 		<script>
 			document.write(`
 				<button
