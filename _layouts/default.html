@@ -34,7 +34,7 @@
 		<footer>
 			<p>
 				{% assign updated = page.content-updated | default: page.date -%}
-				Page revised <time datetime="{{updated | date_to_xmlschema}}">{{updated | date_to_string}}</time>.
+				{% if updated %}Page revised <time datetime="{{updated | date_to_xmlschema}}">{{updated | date_to_string}}</time>.{% endif %}
 				Site built <time datetime="{{site.time | date_to_xmlschema}}">{{site.time | date_to_string}}</time>.
 			</p>
 			<nav>
