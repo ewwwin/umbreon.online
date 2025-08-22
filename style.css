@@ -50,6 +50,7 @@ body {
 /* helps visually center short <main> content while keeping footer at the bottom of the page */
 body::before {content: ""}
 
+/* main content elements */
 a {
 	color: inherit;
 }
@@ -97,6 +98,17 @@ pre::before {
 	width: 1px;
 	background: currentcolor;
 	opacity: 0.5;
+}
+table {
+	margin-inline: auto;
+	margin-block: 1em;
+	border-collapse: collapse;
+}
+th {
+	border-bottom: 1px dotted currentcolor;
+}
+th, td {
+	padding: 0.25em 0.5em;
 }
 
 caption, figcaption {

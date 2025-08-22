@@ -16,17 +16,6 @@ style: |
             linear-gradient(290deg, hsla(160, 100%, 8%, 0.9), transparent 78%),
             black;
     }
-    table {
-        margin-inline: auto;
-        margin-block: 1em;
-        border-collapse: collapse;
-    }
-    th {
-        border-bottom: 1px dotted currentcolor;
-    }
-    th, td {
-        padding: 0.25em 0.5em;
-    }
 ---
 # Pay Transparency
 
